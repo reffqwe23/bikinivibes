@@ -10,6 +10,13 @@
 <meta name="apple-mobile-web-app-title" content="BikiniVibes">
 <meta name="theme-color" content="#e91e8c">
 <meta name="mobile-web-app-capable" content="yes">
+<!-- Open Graph para vista previa en WhatsApp -->
+<meta property="og:site_name" content="BikiniVibes">
+<meta property="og:type" content="website">
+<meta id="ogTitle" property="og:title" content="BikiniVibes 🌸 Moda de playa">
+<meta id="ogDesc" property="og:description" content="Tienda de bikinis online — escríbenos por WhatsApp">
+<meta id="ogImage" property="og:image" content="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80">
+<meta id="ogUrl" property="og:url" content="https://bikinisvibes.netlify.app/">
 <link rel="manifest" href="data:application/manifest+json,{%22name%22:%22BikiniVibes%22,%22short_name%22:%22BikiniVibes%22,%22start_url%22:%22.%22,%22display%22:%22standalone%22,%22background_color%22:%22%23fff5fb%22,%22theme_color%22:%22%23e91e8c%22,%22icons%22:[{%22src%22:%22https://api.dicebear.com/7.x/shapes/svg?seed=bikinivibes%22,%22sizes%22:%22192x192%22,%22type%22:%22image/svg+xml%22}]}">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -405,7 +412,7 @@
   <div class="catalog-grid" id="catalogGrid"></div>
 
   <div class="tienda-footer">
-    <a class="footer-wa" href="https://wa.me/18299222066" target="_blank">
+    <a class="footer-wa" href="https://wa.me/18293942956" target="_blank">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span class="num">+1 (829) 394-2956</span>
     </a>
@@ -474,6 +481,34 @@
   </div>
 </div>
 
+<!-- MODAL PRODUCTO -->
+<div id="modalProducto" onclick="cerrarModal(event)" style="display:none;position:fixed;inset:0;background:rgba(45,10,32,0.6);z-index:200;align-items:flex-end;backdrop-filter:blur(4px);">
+  <div style="background:#fff;width:100%;border-radius:28px 28px 0 0;padding:20px;max-height:90vh;overflow-y:auto;animation:slideUp .3s ease;">
+    <div style="width:40px;height:4px;background:#f9c8e6;border-radius:4px;margin:0 auto 16px;"></div>
+    <img id="mFoto" src="" alt="" style="width:100%;max-height:280px;object-fit:cover;border-radius:16px;margin-bottom:14px;display:none;">
+    <div id="mNombre" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:#2d0a20;font-weight:700;margin-bottom:4px;"></div>
+    <div id="mMeta" style="font-size:0.75rem;color:#7a3a60;font-weight:600;margin-bottom:6px;"></div>
+    <div id="mPrecio" style="font-size:1.3rem;font-weight:700;color:#e91e8c;margin-bottom:8px;"></div>
+    <div id="mDesc" style="font-size:0.85rem;color:#7a3a60;margin-bottom:18px;line-height:1.5;"></div>
+    <button id="mBtnFoto" onclick="" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;border:none;border-radius:14px;font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;margin-bottom:10px;box-shadow:0 4px 16px rgba(124,58,237,0.3);">
+      📸 Guardar foto y preguntar por WhatsApp
+    </button>
+    <button id="mBtnWA" onclick="" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:linear-gradient(135deg,#1db954,#25d366);color:#fff;border:none;border-radius:14px;font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;margin-bottom:10px;box-shadow:0 4px 16px rgba(37,211,102,0.3);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Solo preguntar por WhatsApp
+    </button>
+    <button id="cerrarModal" onclick="cerrarModal(event)" style="width:100%;padding:12px;background:#f9c8e6;color:#e91e8c;border:none;border-radius:14px;font-family:'Poppins',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;">
+      Cerrar
+    </button>
+  </div>
+</div>
+
+<style>
+  #modalProducto { display:none; }
+  #modalProducto.open { display:flex; }
+  @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+</style>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -504,7 +539,7 @@
   drawS();
 
   // TIENDA
-  const WA='18299222066', PASS='vibes2024';
+  const WA='18293942956', PASS='vibes2024';
   let productos=JSON.parse(localStorage.getItem('bikinivibes')||'[]');
   let filtroActual='todos', fotoData=null;
 
@@ -529,26 +564,85 @@
       const foto=p.foto?`<img src="${p.foto}" alt="${p.nombre}" loading="lazy">`:`<span class="no-photo">👙</span>`;
       const sold=p.status==='sold'?`<div class="sold-overlay"><div class="sold-tag">Agotado</div></div>`:'';
       const meta=[p.talla?'T. '+p.talla:'',p.categoria].filter(Boolean).join(' · ');
-      const msg=encodeURIComponent(`Hola! 🌸 Me interesa: *${p.nombre}*${p.talla?' (Talla '+p.talla+')':''} — $${p.precio}. ¿Está disponible?`);
-      const href=p.status==='sold'?'#':`https://wa.me/${WA}?text=${msg}`;
       return `<div class="product-card" style="animation-delay:${i*.07}s">
         <div class="card-bar"></div>
-        <div class="card-img-wrap">${foto}${sold}</div>
+        <div class="card-img-wrap" onclick="abrirProducto(${p.id})" style="cursor:pointer">${foto}${sold}</div>
         <div class="card-body">
           <div class="card-name">${p.nombre}</div>
           ${meta?`<div class="card-meta">${meta}</div>`:''}
           <div class="card-price">$${parseFloat(p.precio).toLocaleString()}</div>
-          <a class="btn-wa${p.status==='sold'?' agotado':''}" href="${href}" target="_blank">
+          <div style="display:flex;gap:6px;margin-top:0">
+          <button class="btn-wa${p.status==='sold'?' agotado':''}" onclick="${p.status==='sold'?'':('abrirProducto('+p.id+')')}" style="flex:1">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            ${p.status==='sold'?'Agotado':'Pedir por WhatsApp'}
-          </a>
+            ${p.status==='sold'?'Agotado':'Pedir 🌸'}
+          </button>
+          ${p.status!=='sold'?`<button onclick="compartirProducto(${p.id})" style="padding:10px 11px;background:linear-gradient(135deg,#25d366,#1db954);color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:1rem;box-shadow:0 3px 10px rgba(37,211,102,0.3);" title="Compartir por WhatsApp">📤</button>`:''}
+          </div>
         </div>
       </div>`;
     }).join('');
   }
 
+  function compartirProducto(id) {
+    const p = productos.find(x=>x.id===id); if(!p) return;
+    const url = `https://bikinisvibes.netlify.app/?producto=${p.id}`;
+    const texto = `🌸 *${p.nombre}*${p.talla?' — Talla '+p.talla:''}\n💰 $${p.precio}${p.desc?'\n'+p.desc:''}\n\n👙 Ver en la tienda: ${url}`;
+    const waUrl = `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`;
+    // Intentar Web Share API primero (más natural en móvil)
+    if (navigator.share) {
+      navigator.share({
+        title: p.nombre,
+        text: `🌸 ${p.nombre} — $${p.precio}`,
+        url: url
+      }).catch(()=>{ window.open(waUrl,'_blank'); });
+    } else {
+      window.open(waUrl,'_blank');
+    }
+  }
+
   function mostrarAdmin(){ document.getElementById('vistaPublica').style.display='none'; document.getElementById('vistaAdmin').style.display='block'; }
   function volverTienda(){ document.getElementById('vistaPublica').style.display='block'; document.getElementById('vistaAdmin').style.display='none'; renderPublico(); }
+
+  function abrirProducto(id) {
+    const p = productos.find(x=>x.id===id); if(!p) return;
+    const meta = [p.talla?'Talla '+p.talla:'', p.categoria].filter(Boolean).join(' · ');
+    const modal = document.getElementById('modalProducto');
+    document.getElementById('mFoto').src = p.foto || '';
+    document.getElementById('mFoto').style.display = p.foto ? 'block' : 'none';
+    document.getElementById('mNombre').textContent = p.nombre;
+    document.getElementById('mMeta').textContent = meta;
+    document.getElementById('mPrecio').textContent = '$'+parseFloat(p.precio).toLocaleString();
+    document.getElementById('mDesc').textContent = p.desc || '';
+    document.getElementById('mBtnWA').onclick = () => pedirPorWA(p);
+    document.getElementById('mBtnFoto').onclick = () => descargarFoto(p);
+    document.getElementById('mBtnFoto').style.display = p.foto ? 'flex' : 'none';
+    modal.classList.add('open');
+  }
+
+  function cerrarModal(e) {
+    if(!e || e.target===document.getElementById('modalProducto') || e.target.id==='cerrarModal') {
+      document.getElementById('modalProducto').classList.remove('open');
+    }
+  }
+
+  function pedirPorWA(p) {
+    const msg = encodeURIComponent(`Hola! 🌸 Me interesa: *${p.nombre}*${p.talla?' (Talla '+p.talla+')':''} — $${p.precio}. ¿Está disponible?`);
+    window.open(`https://wa.me/${WA}?text=${msg}`, '_blank');
+  }
+
+  function descargarFoto(p) {
+    if(!p.foto) return;
+    // Descarga la foto al teléfono
+    const a = document.createElement('a');
+    a.href = p.foto;
+    a.download = p.nombre.replace(/\s+/g,'_')+'.jpg';
+    a.click();
+    // Espera y abre WhatsApp
+    setTimeout(() => {
+      showToast('📸 Foto guardada — ahora adjúntala en WhatsApp');
+      setTimeout(() => pedirPorWA(p), 1200);
+    }, 600);
+  }
   function checkLogin(){
     if(document.getElementById('passInput').value===PASS){ document.getElementById('loginBox').style.display='none'; document.getElementById('adminPanel').style.display='block'; renderAdmin(); }
     else document.getElementById('loginError').style.display='block';
